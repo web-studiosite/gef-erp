@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GEF - Gestão Empresarial e Financeira</title>
+    <meta name="description" content="Sistema ERP e PDV SaaS multi-loja em JavaScript Vanilla e Supabase PostgreSQL real com RBAC, RLS, gestão de estoque, vendas, clientes, auditoria e monitor de lojas." />
+    
+    <!-- PWA & Mobile Web App Meta Tags -->
+    <meta name="theme-color" content="#0f172a" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="GEF Gestão" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+
+    <!-- Favicon Oficial GEF com Seta Gráfica -->
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+
+    <meta property="og:title" content="GEF - Gestão Empresarial e Financeira" />
+    <meta property="og:description" content="Sistema ERP e PDV SaaS multi-loja em JavaScript Vanilla e Supabase PostgreSQL real com RBAC, RLS, gestão de estoque, vendas, clientes, auditoria e monitor de lojas." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <!-- Tailwind CSS (Vite Build Nativo com Suporte a Tailwind v4) -->
+    <link rel="stylesheet" href="/src/index.css" />
+
+    <!-- CDN Fallbacks assíncronos (não bloqueiam a renderização inicial do DOM) -->
+    <script defer src="https://unpkg.com/lucide@latest"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  </head>
+  <body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-orange-500/30 selection:text-orange-300 min-h-screen">
+    <!-- Ponto de Montagem da Aplicação Vanilla JS com Splash Inicial Imediato -->
+    <div id="app">
+      <div id="appLoadingSplash" class="min-h-screen flex flex-col items-center justify-center p-6 bg-slate-950 text-slate-100">
+        <div class="flex flex-col items-center text-center space-y-4 max-w-xs animate-pulse">
+          <div class="w-16 h-16 rounded-2xl bg-slate-900 border border-orange-500/40 p-2 shadow-xl shadow-orange-950/40 flex items-center justify-center">
+            <svg viewBox="0 0 64 64" fill="none" class="w-12 h-12">
+              <text x="32" y="44" text-anchor="middle" font-family="sans-serif" font-weight="900" font-size="22" fill="#FFFFFF">GEF</text>
+              <path d="M 12 45 L 23 37 L 35 32 L 48 18 L 52 14" stroke="#ea580c" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <polygon points="54,12 44,14 52,22" fill="#fbbf24"/>
+            </svg>
+          </div>
+          <div>
+            <h1 class="text-base font-black tracking-wider text-white">GEF ENTERPRISE</h1>
+            <p class="text-xs text-slate-400 mt-1 font-mono">Iniciando sistema...</p>
+          </div>
+          <div class="w-36 h-1 bg-slate-800 rounded-full overflow-hidden mt-2">
+            <div class="w-full h-full bg-gradient-to-r from-orange-600 via-amber-500 to-orange-600 rounded-full"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Módulo Principal da Aplicação Vanilla JS -->
+    <script type="module" src="/js/app.js"></script>
+
+    <!-- Failsafe Watchdog: Garante que a aplicação NUNCA fique travada na tela de carregamento -->
+    <script>
+      setTimeout(function() {
+        var splash = document.getElementById('appLoadingSplash');
+        if (splash) {
+          console.warn('[GEF Watchdog] Forçando montagem da interface após tempo limite...');
+          if (window.bootstrapGEF) {
+            try { window.bootstrapGEF(); } catch(e) { console.error(e); }
+          }
+        }
+      }, 1500);
+    </script>
+  </body>
+</html>

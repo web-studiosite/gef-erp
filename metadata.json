@@ -1,0 +1,6 @@
+{
+  "name": "GEF - Gestão Empresarial e Financeira",
+  "description": "Sistema ERP e PDV SaaS multi-loja em JavaScript Vanilla e Supabase PostgreSQL real com RBAC, RLS, gestão de estoque, vendas, clientes, auditoria e monitor de lojas.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
