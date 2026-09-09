@@ -7,13 +7,13 @@
 import { createClient as createSupabaseClient } from '@supabase/supabase-js';
 
 // Chaves de armazenamento local para persistência de credenciais públicas da loja
-const STORAGE_KEY_URL = 'gef_supabase_url';
-const STORAGE_KEY_ANON_KEY = 'gef_supabase_anon_key';
+const STORAGE_KEY_URL = 'https://cxhpmexiohzxgokuxajk.supabase.co';
+const STORAGE_KEY_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN4aHBtZXhpb2h6eGdva3V4YWprIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODg5NjI1MzUsImV4cCI6MjEwNDUzODUzNX0.XNS-fheKlqmnvn9YlCaO5us79AY4yt_nIThDbCx_sFM';
 const STORAGE_KEY_CURRENT_STORE = 'gef_current_store_id';
 
 // Configuração oficial do projeto Supabase fornecida
-export const DEFAULT_SUPABASE_URL = 'https://hsfzjliuoajyafcsyfcy.supabase.co';
-export const DEFAULT_SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhzZnpqbGl1b2FqeWFmY3N5ZmN5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODg2MzIzODcsImV4cCI6MjEwNDIwODM4N30.TMdoh8Y0BRQJTZebNkgp5m9e1ZOprnjjz0DSYvn5d-A';
+export const DEFAULT_SUPABASE_URL = 'https://cxhpmexiohzxgokuxajk.supabase.co';
+export const DEFAULT_SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN4aHBtZXhpb2h6eGdva3V4YWprIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODg5NjI1MzUsImV4cCI6MjEwNDUzODUzNX0.XNS-fheKlqmnvn9YlCaO5us79AY4yt_nIThDbCx_sFM.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhzZnpqbGl1b2FqeWFmY3N5ZmN5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODg2MzIzODcsImV4cCI6MjEwNDIwODM4N30.TMdoh8Y0BRQJTZebNkgp5m9e1ZOprnjjz0DSYvn5d-A';
 
 let supabaseClient = null;
 
